@@ -1,0 +1,52 @@
+service: measurement-converter
+
+frameworkVersion: '>=1.55.0 <2.0.0'
+
+plugins:
+  - serverless-python-requirements
+  - serverless-offline-python
+
+provider:
+  name: aws
+  timeout: 30
+  memorySize: 512
+  runtime: python3.8
+  stage: dev
+  region: us-east-1
+  environment:
+
+
+resources:
+  - ${file(./resources.yml)}
+
+functions:
+
+  TemperatureAPI:
+    handler: handler.convert_temp
+    role: Role1MeasurementConverter
+    events:
+      - http:
+          path: temperature/{amount}/{from_unit}/{to_unit}
+          method: get
+          cors: true
+
+  VolumeAPI:
+    handler: handler.convert_vol
+    role: Role1MeasurementConverter
+    events:
+      - http:
+          path: volume/{amount}/{from_unit}/{to_unit}
+          method: get
+          cors: true
+
+
+
+Outputs:
+  ApiUrl:
+    Description: "The API Gateway URL"
+    Value:
+      Fn::Join:
+        - ""
+        - - "https://"
+          - Ref: ApiGatewayRestApi
+          - ".execute-api.us-east-1.amazonaws.com/dev"
