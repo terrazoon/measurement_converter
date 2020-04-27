@@ -10,8 +10,7 @@ def get_converted_temperature(input, output, from_unit, to_unit):
         print(f"hitting invalid #1")
         return "invalid"
     if not input.isnumeric() or not output.isnumeric():
-        print(f"hitting invalid #2")
-        return "invalid"
+        return "incorrect"
     if from_unit == to_unit:
         if input == output:
             return "correct"
@@ -39,7 +38,10 @@ def convert_from_fahrenheit(input, output, to_unit):
     else:
         return "invalid"
 
-    if output == correct_answer:
+    if isinstance(output, str):
+        return "incorrect"
+
+    if round(output, 1) == round(correct_answer, 1):
         return "correct"
     else:
         print(f"incorrect input {input} correct_answer = {correct_answer}")
