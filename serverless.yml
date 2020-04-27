@@ -26,7 +26,7 @@ functions:
     role: Role1MeasurementConverter
     events:
       - http:
-          path: temperature/{amount}/{from_unit}/{to_unit}
+          path: temperature/{input}/{output}/{from_unit}/{to_unit}
           method: get
           cors: true
 
@@ -35,7 +35,7 @@ functions:
     role: Role1MeasurementConverter
     events:
       - http:
-          path: volume/{amount}/{from_unit}/{to_unit}
+          path: volume/{input}/{output}/{from_unit}/{to_unit}
           method: get
           cors: true
 
