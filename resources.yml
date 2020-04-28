@@ -19,6 +19,11 @@ Resources:
               Statement:
                 - Effect: Allow
                   Action:
+                    - execute-api:Invoke
+                  Resource:
+                    - "*"
+                - Effect: Allow
+                  Action:
                     - lambda:CreateEventSourceMapping
                     - lambda:ListEventSourceMappings
                     - lambda:ListFunctions

@@ -9,9 +9,11 @@
   "author": "Kenneth Kehl",
   "license": "ISC",
   "devDependencies": {
+    "serverless-domain-manager": "^3.3.2",
     "serverless-python-requirements": "^5.1.0"
   },
   "dependencies": {
+    "serverless-api-gateway-throttling": "^1.0.1",
     "serverless-offline-python": "^3.22.2"
   }
 }

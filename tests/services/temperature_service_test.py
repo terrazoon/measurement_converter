@@ -4,6 +4,7 @@ from src.services.temperature_service import get_converted_temperature
 
 
 class TemperatureServiceTest(unittest.TestCase):
+
     def test_convert_from_fahrenheit_correct(self):
         result = get_converted_temperature(32, 0.0000, 'f', 'c')
         assert result == "correct"

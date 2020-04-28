@@ -3,8 +3,10 @@ service: measurement-converter
 frameworkVersion: '>=1.55.0 <2.0.0'
 
 plugins:
+  - serverless-domain-manager
   - serverless-python-requirements
   - serverless-offline-python
+  - serverless-api-gateway-throttling
 
 provider:
   name: aws
@@ -15,6 +17,18 @@ provider:
   region: us-east-1
   environment:
 
+custom:
+  customDomain:
+    domainName: 'www.kennethkehl.com'
+    basePath: api
+    certificateName: '*.kennethkehl.com'
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    endpointType: 'regional'
+    securityPolicy: tls_1_2
+  apiGatewayThrottling:
+    maxRequestsPerSecond: 100
+    maxConcurrentRequests: 50
 
 resources:
   - ${file(./resources.yml)}

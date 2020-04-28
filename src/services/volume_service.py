@@ -1,14 +1,12 @@
-from src.services.formula_factory import FormulaFactory
-from src.services.validation_service import validate_temperature, is_a_number
+from src.services.validation_service import validate_volume, is_a_number
+from src.services.volume_factory import VolumeFactory
 
-factory = FormulaFactory()
+factory = VolumeFactory()
 
-
-def get_converted_temperature(my_input, my_output, from_unit, to_unit):
+def get_converted_volume(my_input, my_output, from_unit, to_unit):
     from_unit = from_unit.lower()
     to_unit = to_unit.lower()
-
-    is_valid = validate_temperature(my_input, from_unit, to_unit)
+    is_valid = validate_volume(my_input, from_unit, to_unit)
     if not is_valid:
         return "invalid"
 
@@ -24,7 +22,11 @@ def get_converted_temperature(my_input, my_output, from_unit, to_unit):
 
     formula = factory.get_formula(from_unit, to_unit)
     answer = formula(my_input)
-    if round(my_output, 1) == round(answer, 1):
+    my_output = round(my_output, 1)
+    answer = round(answer, 1)
+    if my_output == answer:
         return "correct"
     else:
+        print(f"my_output= {my_output} answer = {answer}")
         return "incorrect"
+
