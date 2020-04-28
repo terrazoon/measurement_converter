@@ -4,8 +4,7 @@ from src.services.volume_factory import VolumeFactory
 factory = VolumeFactory()
 
 def get_converted_volume(my_input, my_output, from_unit, to_unit):
-    from_unit = from_unit.lower()
-    to_unit = to_unit.lower()
+
     is_valid = validate_volume(my_input, from_unit, to_unit)
     if not is_valid:
         return "invalid"

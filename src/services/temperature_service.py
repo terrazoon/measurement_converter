@@ -5,8 +5,6 @@ factory = FormulaFactory()
 
 
 def get_converted_temperature(my_input, my_output, from_unit, to_unit):
-    from_unit = from_unit.lower()
-    to_unit = to_unit.lower()
 
     is_valid = validate_temperature(my_input, from_unit, to_unit)
     if not is_valid:

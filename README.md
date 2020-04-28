@@ -17,18 +17,24 @@ To check in, create a pull request.  You will need two code reviewers, including
 
 ## Things to improve
 
-1. The CI/CD process is set up with Github Actions.  Checkins trigger unit tests and lint checks.  But there is no deploy step right now.
+1. The CI/CD process is set up with Github Actions.  Check-ins currently trigger unit tests and lint checks.  But there is no deploy step right now.
 This is because a deploy step would require storing AWS access keys in Github and Github specifically recommends not doing so while
 Github Actions is in public beta.  
 2. Add CloudWatch alerts to notify if API calls are failing
 3. Add S3-hosted static website so users can use a UI
 4. Add a dead letter SQS queue to catch any failed requests
-5. Add API throttling via the pluging serverles-api-throttling
- 
+5. Bring unit test coverage up to 100%
+
+### Running the application from the browser
+
+You can invoke the app from your browser using the following APIs:
+
+https://www.kennethkehl.com/api/temperature/{input}/{student response}/{from_units}/{to_units}
+https://www.kennethkehl.com/api/volume/{input}/{student response}/{from_units}/{to_units}
+
 ### Prerequisites
 
-1. Serverless Framework
-2. An AWS Account (if you want to test in the cloud and not locally)
+Serverless Framework
 
 ### Installing
 

@@ -8,6 +8,10 @@ def convert(event, context):
     output = event['pathParameters']['output']
     from_unit = event['pathParameters']['from_unit']
     to_unit = event['pathParameters']['to_unit']
+    from_unit = from_unit.lower()
+    from_unit = from_unit[0]
+    to_unit = to_unit.lower()
+    to_unit = to_unit[0]
     answer = get_converted_temperature(my_input, output, from_unit, to_unit)
 
     result = {
