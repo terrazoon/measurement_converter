@@ -13,6 +13,8 @@ def get_converted_temperature(my_input, my_output, from_unit, to_unit):
 
     if not is_a_number(my_input) or not is_a_number(my_output):
         return "incorrect"
+    my_input = float(my_input)
+    my_output = float(my_output)
     if from_unit == to_unit:
         if my_input == my_output:
             return "correct"
@@ -28,4 +30,6 @@ def get_converted_temperature(my_input, my_output, from_unit, to_unit):
 
 
 def is_a_number(num):
-    return isinstance(num, int) or isinstance(num, float)
+    num = num.replace(".", "")
+    num = num.replace(",", "")
+    return num.isnumeric()

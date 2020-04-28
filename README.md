@@ -6,14 +6,20 @@ Measurement Converter
 
 This is a demo project that converts temperatures and volumes in various ways.  It uses python, AWS Lambda, and AWS Api Gateway.
 
-## TODO
+## Code Reviews
 
-1. Add CloudWatch alerts to notify if API calls are failing
-2. Add S3-hosted static website so users can use a UI
-3. Add a dead letter SQS queue to catch any failed requests
-4. Add API throttling
-5. 
+To check in, create a pull request.  You will need two code reviewers, including at least one code owner.
 
+## Things to improve
+
+1. The CI/CD process is set up with Github Actions.  Checkins trigger unit tests and lint checks.  But there is no deploy step right now.
+This is because a deploy step would require storing AWS access keys in Github and Github specifically recommends not doing so while
+Github Actions is in public beta.  
+2. Add CloudWatch alerts to notify if API calls are failing
+3. Add S3-hosted static website so users can use a UI
+4. Add a dead letter SQS queue to catch any failed requests
+5. Add API throttling via the pluging serverles-api-throttling
+ 
 ### Prerequisites
 
 1. Serverless Framework
