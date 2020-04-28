@@ -34,3 +34,11 @@ class TemperatureServiceTest(unittest.TestCase):
 
         result = get_converted_temperature(136.1, 45.2, "dog", "c")
         assert result == "invalid"
+
+    def test_convert_from_kelvin_to_fahrenheit(self):
+        result = get_converted_temperature(317.33, 111.554, "k", "f")
+        assert result == "incorrect"
+
+    def test_convert_from_rankine_to_kelvin(self):
+        result = get_converted_temperature(900, 500, "r", "k")
+        assert result == "correct"
