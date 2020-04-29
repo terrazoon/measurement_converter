@@ -39,7 +39,9 @@ test_list = [
     [0.0353147, 1, 'f', 'l', 'correct'],
     [1, 1, 'f', 'f', 'correct'],
     [1, 2, 'f', 'f', 'incorrect'],
-    [1, 1, 'f', 'z', 'invalid']
+    [1, 1, 'f', 'z', 'invalid'],
+    [1, 1, 'cubic-feet', 'cubic-feet', 'correct'],
+    [1, 1, 'cubic-inches', 'cubic-inches', 'correct']
 
 ]
 
