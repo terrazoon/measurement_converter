@@ -1,8 +1,3 @@
-1. todo test naked apis
-2. validation service
-3. api throttling
-
-
 # Project Title
 
 Measurement Converter
@@ -11,64 +6,62 @@ Measurement Converter
 
 This is a demo project that converts temperatures and volumes in various ways.  It uses python, AWS Lambda, and AWS Api Gateway.
 
-## Code Reviews
+## How to run the app
 
-To check in, create a pull request.  You will need two code reviewers, including at least one code owner.
-
-## Things to improve
-
-1. The CI/CD process is set up with Github Actions.  Check-ins currently trigger unit tests and lint checks.  But there is no deploy step right now.
-This is because a deploy step would require storing AWS access keys in Github and Github specifically recommends not doing so while
-Github Actions is in public beta.  
-2. Add CloudWatch alerts to notify if API calls are failing
-3. Add S3-hosted static website so users can use a UI
-4. Add a dead letter SQS queue to catch any failed requests
-5. Bring unit test coverage up to 100%
-
-### Running the application from the browser
-
-You can invoke the app from your browser using the following APIs:
+### The project is currently running in AWS and you can run the demo version in a browser:
 
 https://www.kennethkehl.com/api/temperature/{input}/{student response}/{from_units}/{to_units}
 https://www.kennethkehl.com/api/volume/{input}/{student response}/{from_units}/{to_units}
 
-### Prerequisites
+Note that if you get tired of typing Fahrenheit or Cubic-feet every time, there is a shorthand you can use. This
+shorthand is the first letter of the unit of measurement (Fahrenheit == 'f', etc.) except in the case of cubic-feet ("f")
+and cubic-inches ("i")
 
-Serverless Framework
+### Running locally
 
-### Installing
+Install Serverless Framework and its dependencies the normal way you would do for your operating system.
 
-(Note that these commands should work pretty easily on Linux or Mac, but for Windows you should probably install GitBash)
-
-1. Install node.js follow the proper instructions for your operating system
-2. Install npm following the proper instructions for your operating system
-3. Install Serverless Framework:
-
-```
-npm install -g serverless
-```
-
-4. Install serverless-python-requirements plugin:
+Install serverless-python-requirements plugin:
 
 ```
 npm install serverless-python-requirements
 ```
 
-5. Install serverless-offline-python plugin:
+Install serverless-offline-python plugin:
 
 ```
 npm install serverless-offline-python
 ```
 
-6. Run the project in offline mode
+Run the project in offline mode
 
 ```
 sls offline start
 ```
 
-7. From a command prompt, invoke the various curl commands (see below).
+Get the URLs to use from the command prompt (should be localhost:3000 etc.)
 
-## Running the unit tests
+7. Call the urls from a browser, or, from a command prompt, invoke the various curl commands (see below).
+
+
+## Code Reviews
+
+To check in, create a pull request for https://github.com/terrazoon/measurement_converter.  You will need two code reviewers, including at least one code owner.
+
+## CI/CD
+
+The repository uses GitHub Actions so that lint and unit tests are run on every check in.  Right now checking in
+does not automatically cause the app to deploy, because to do so AWS credentials would have to be stored as secrets
+in GitHub and GitHub specifically does not recommend doing this while GitHub Actions is in public beta.
+
+### Prerequisites
+
+No prerequisites if you are just running the app in a browser.
+
+If you want to run the app locally or do development work, you will need Serverless Framework.
+
+
+## Running the unit tests locally
 
 Open the project in Pycharm.  Right click on the test folder and run "pytest in tests"
 
@@ -85,6 +78,16 @@ Convert a temperature from Kelvin to Celsius
 ```
 curl -v localhost:3000/273.15/0/k/c
 ```
+
+## Things to improve
+
+1. The CI/CD process is set up with Github Actions.  Check-ins currently trigger unit tests and lint checks.  But there is no deploy step right now.
+This is because a deploy step would require storing AWS access keys in Github and Github specifically recommends not doing so while
+Github Actions is in public beta.  
+2. Add CloudWatch alerts to notify if API calls are failing
+3. Add S3-hosted static website so users can use a UI
+4. Add a dead letter SQS queue to catch any failed requests
+5. Register emails to notify users of api changes
 
 ## Versioning
 

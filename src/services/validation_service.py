@@ -1,6 +1,9 @@
 valid_volumes = ['c', 'f', 'g', 'i', 'l', 't']
 valid_temperature_scales = ["f", "c", "k", "r"]
 
+INVALID = "invalid"
+CORRECT = "correct"
+INCORRECT = "incorrect"
 
 def validate_volume(my_input, from_units, to_units):
     if not is_a_number(my_input):
