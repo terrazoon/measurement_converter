@@ -28,7 +28,9 @@ test_list = [
     [4, 4, 'i', 'g', 'incorrect'],
     [1, 12, 'f', 't', 'incorrect'],
     [1, 2, 'y', 'z', 'invalid'],
-    [1, 'dog', 'f', 'i', 'invalid']
+    ['dog', 1, 'f', 'i', 'invalid'],
+    [1,'dog', 'f', 'i', 'incorrect'],
+    ['1', '231', 'g', 'i', 'correct']
 
 ]
 
