@@ -21,7 +21,11 @@ class TemperatureServiceTest(unittest.TestCase):
         [900, 500, 'r', 'k', 'correct'],
         [0, 273.15, 'c', 'k', 'correct'],
         [273.15, 0, 'k', 'c', 'correct'],
-        [1, 2, 'f', 'f', 'incorrect']
+        [1, 2, 'f', 'f', 'incorrect'],
+        [0, 491.67, 'c', 'r', 'correct'],
+        [491.67, 0, 'r', 'c', 'correct'],
+        [500, 900, 'k', 'r', 'correct'],
+        ['dog', 24, 'k', 'r', 'invalid']
     ]
 
     def test_temperature_conversions(self):

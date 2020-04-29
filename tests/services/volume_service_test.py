@@ -37,7 +37,9 @@ test_list = [
     [61.028, 1, 'i', 'l', 'correct'],
     [1, 0.0353147, 'l', 'f', 'correct'],
     [0.0353147, 1, 'f', 'l', 'correct'],
-    [1, 1, 'f', 'f', 'correct']
+    [1, 1, 'f', 'f', 'correct'],
+    [1, 2, 'f', 'f', 'incorrect'],
+    [1, 1, 'f', 'z', 'invalid']
 
 ]
 

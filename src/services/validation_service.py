@@ -3,7 +3,7 @@ valid_temperature_scales = ["f", "c", "k", "r"]
 
 
 def validate_volume(my_input, from_units, to_units):
-    if not is_a_number(my_input) and not is_a_number(my_input):
+    if not is_a_number(my_input):
         return False
     first_letter_from = from_units.lower()[0]
     if first_letter_from not in valid_volumes:
@@ -15,7 +15,7 @@ def validate_volume(my_input, from_units, to_units):
 
 
 def validate_temperature(my_input, from_units, to_units):
-    if not is_a_number(my_input) and not is_a_number(my_input):
+    if not is_a_number(my_input):
         return False
     first_letter_from = from_units.lower()[0]
     if first_letter_from not in valid_temperature_scales:
