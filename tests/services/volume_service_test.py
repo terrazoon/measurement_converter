@@ -29,7 +29,7 @@ test_list = [
     [1, 12, 'f', 't', 'incorrect'],
     [1, 2, 'y', 'z', 'invalid'],
     ['dog', 1, 'f', 'i', 'invalid'],
-    [1,'dog', 'f', 'i', 'incorrect'],
+    [1, 'dog', 'f', 'i', 'incorrect'],
     ['1', '231', 'g', 'i', 'correct'],
     [1, 67.628, 'l', 't', 'correct'],
     [67.628, 1, 't', 'l', 'correct'],

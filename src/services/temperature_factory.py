@@ -1,4 +1,16 @@
 class TemperatureFactory:
+    """
+        Returns a formula to use to do the required temperature conversion.
+
+        Given how simple these conversions are, an alternative approach would have been
+        to just make a lookup table and a generic function (similar to what was done in
+        temperature_service_test, for example).
+
+        However, this was implemented as a factory because one could imagine scenarios where
+        the calculations were more variable or complex and where a custom formula would work better
+        than just a constant.
+    """
+
     formula_map = {}
 
     def __init__(self):
