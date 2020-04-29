@@ -24,7 +24,11 @@ test_list = [
     [7.48052, 1, 'g', 'f', 'correct'],
     [1, 7.48052, 'f', 'g', 'correct'],
     [1, 231, 'g', 'i', 'correct'],
-    [231, 1, 'i', 'g', 'correct']
+    [231, 1, 'i', 'g', 'correct'],
+    [4, 4, 'i', 'g', 'incorrect'],
+    [1, 12, 'f', 't', 'incorrect'],
+    [1, 2, 'y', 'z', 'invalid'],
+    [1, 'dog', 'f', 'i', 'invalid']
 
 ]
 

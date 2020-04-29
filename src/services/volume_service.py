@@ -26,6 +26,5 @@ def get_converted_volume(my_input, my_output, from_unit, to_unit):
     if my_output == answer:
         return "correct"
     else:
-        print(f"my_output= {my_output} answer = {answer}")
         return "incorrect"
 
