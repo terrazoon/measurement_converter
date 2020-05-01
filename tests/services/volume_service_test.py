@@ -41,8 +41,8 @@ test_list = [
     [1, 2, 'f', 'f', 'incorrect'],
     [1, 1, 'f', 'z', 'invalid'],
     [1, 1, 'cubic-feet', 'cubic-feet', 'correct'],
-    [1, 1, 'cubic-inches', 'cubic-inches', 'correct']
-
+    [1, 1, 'cubic-inches', 'cubic-inches', 'correct'],
+    [73.12, 19.4, 'gallons', 'kelvin', 'invalid']
 ]
 
 
