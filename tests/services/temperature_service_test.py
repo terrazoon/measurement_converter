@@ -34,6 +34,6 @@ class TemperatureServiceTest(unittest.TestCase):
     def test_temperature_conversions(self):
         for test in self.test_list:
             result = TemperatureService.get_converted_temperature(test[0], test[1], test[2], test[3])
-            if result != test[4]:
-                print(f" {result} {test}")
+            # if result != test[4]:
+            #    print(f" {result} {test}")
             assert result == test[4]
