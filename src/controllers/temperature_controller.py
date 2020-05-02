@@ -1,5 +1,3 @@
-import json
-
 from src.services.temperature_service import TemperatureService
 from src.utils.global_exception_handler import global_exception
 

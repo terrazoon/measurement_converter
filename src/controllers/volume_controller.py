@@ -1,5 +1,3 @@
-import json
-
 from src.services.volume_service import VolumeService
 from src.utils.global_exception_handler import global_exception
 
