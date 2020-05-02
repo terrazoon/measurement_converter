@@ -1,5 +1,5 @@
 class ValidationConstants:
 
-    INVALID = "invalid"
-    CORRECT = "correct"
-    INCORRECT = "incorrect"
+    INVALID = 'Invalid'
+    CORRECT = 'Correct'
+    INCORRECT = 'Incorrect'

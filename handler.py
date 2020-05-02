@@ -2,11 +2,9 @@ import src.controllers.temperature_controller as temperature_controller
 import src.controllers.volume_controller as volume_controller
 
 
-def convert_temp(event, context):
-    print(f"enter convert temp!")
+def convert_temperatures(event, context):
     return temperature_controller.convert(event, context)
 
 
-def convert_vol(event, context):
-    print(f"enter convert vole!")
+def convert_volumes(event, context):
     return volume_controller.convert(event, context)

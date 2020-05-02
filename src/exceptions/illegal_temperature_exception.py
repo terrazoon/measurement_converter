@@ -1,2 +1,0 @@
-class IllegalTemperatureException(Exception):
-    pass

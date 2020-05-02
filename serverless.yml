@@ -19,9 +19,11 @@ provider:
 
 custom:
   customDomain:
-    domainName: 'www.kennethkehl.com'
-    basePath: api
-    certificateName: '*.kennethkehl.com'
+    # replace with your registered domain name
+    domainName: 'www.example.com'
+    basePath: 'api'
+    # replace with your certificate name
+    certificateName: '*.example.com'
     stage: ${self:provider.stage}
     createRoute53Record: true
     endpointType: 'regional'
@@ -36,7 +38,7 @@ resources:
 functions:
 
   TemperatureAPI:
-    handler: handler.convert_temp
+    handler: handler.convert_temperatures
     role: Role1MeasurementConverter
     events:
       - http:
@@ -45,7 +47,7 @@ functions:
           cors: true
 
   VolumeAPI:
-    handler: handler.convert_vol
+    handler: handler.convert_volumes
     role: Role1MeasurementConverter
     events:
       - http:

@@ -1,8 +1,10 @@
 import json
 
-from src.services.volume_service import get_converted_volume
+from src.services.volume_service import VolumeService
+from src.utils.global_exception_handler import global_exception
 
 
+@global_exception
 def convert(event, context):
     my_input = event['pathParameters']['input']
     output = event['pathParameters']['output']
@@ -12,10 +14,7 @@ def convert(event, context):
     from_unit = from_unit[0]
     to_unit = to_unit.lower()
     to_unit = to_unit[0]
-    answer = get_converted_volume(my_input, output, from_unit, to_unit)
-
-    result = {
-        "answer": answer
-    }
-    response = {'statusCode': 200, 'isBase64Encoded': False, 'headers': {}, 'body': json.dumps(result)}
+    answer = VolumeService.get_converted_volume(my_input, output, from_unit, to_unit)
+    answer = answer.replace("\"", "")
+    response = {'statusCode': 200, 'isBase64Encoded': False, 'headers': {}, 'body': answer}
     return response
