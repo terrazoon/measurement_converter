@@ -25,7 +25,8 @@ class TemperatureServiceTest(unittest.TestCase):
         [0, 491.67, 'c', 'r', 'correct'],
         [491.67, 0, 'r', 'c', 'correct'],
         [500, 900, 'k', 'r', 'correct'],
-        ['dog', 24, 'k', 'r', 'invalid']
+        ['dog', 24, 'k', 'r', 'invalid'],
+        [None, 24, 'k', 'r', 'invalid']
 
     ]
 
