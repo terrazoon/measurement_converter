@@ -1,6 +1,6 @@
 import unittest
 
-from src.services.temperature_service import get_converted_temperature
+from src.services.temperature_service import TemperatureService
 
 
 class TemperatureServiceTest(unittest.TestCase):
@@ -32,5 +32,5 @@ class TemperatureServiceTest(unittest.TestCase):
 
     def test_temperature_conversions(self):
         for test in self.test_list:
-            result = get_converted_temperature(test[0], test[1], test[2], test[3])
+            result = TemperatureService.get_converted_temperature(test[0], test[1], test[2], test[3])
             assert result == test[4]

@@ -1,6 +1,6 @@
 import unittest
 
-from src.services.volume_service import get_converted_volume
+from src.services.volume_service import VolumeService
 
 test_list = [
     [25.6, 6.1, 'c', 'l', 'correct'],
@@ -50,5 +50,5 @@ class VolumeServiceTest(unittest.TestCase):
 
     def test_volume_conversions(self):
         for test in test_list:
-            result = get_converted_volume(test[0], test[1], test[2], test[3])
+            result = VolumeService.get_converted_volume(test[0], test[1], test[2], test[3])
             assert result == test[4]

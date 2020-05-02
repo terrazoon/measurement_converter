@@ -52,7 +52,7 @@ To check in, create a pull request for https://github.com/terrazoon/measurement_
 
 The repository uses GitHub Actions so that lint and unit tests are run on every check in.  Right now checking in
 does not automatically cause the app to deploy, because to do so AWS credentials would have to be stored as secrets
-in GitHub and GitHub specifically does not recommend doing this while GitHub Actions is in public beta.
+in GitHub and GitHub specifically recommends not doing this while GitHub Actions is in public beta.
 
 ### Prerequisites
 
@@ -83,8 +83,8 @@ curl -v localhost:3000/273.15/0/k/c
 
 1. The CI/CD process is set up with Github Actions.  Check-ins currently trigger unit tests and lint checks.  But there is no deploy step right now.
 This is because a deploy step would require storing AWS access keys in Github and Github specifically recommends not doing so while
-Github Actions is in public beta.  
-2. Add CloudWatch alerts to notify if API calls are failing
+Github Actions is in public beta. 
+2. Add CloudWatch alarms to notify if API calls are failing
 3. Add S3-hosted static website so users can use a UI
 4. Add a dead letter SQS queue to catch any failed requests
 5. Register emails to notify users of api changes
