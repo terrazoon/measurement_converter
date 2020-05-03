@@ -55,8 +55,9 @@ class VolumeService:
         :param unit_str: the original unit
         :return: the abbreviation
         """
-        if unit_str == 'cubic_inches' or unit_str == 'cubic-inches':
+        unit_str = unit_str.lower()
+        if unit_str == 'cubic_inches' or unit_str == 'cubic-inches' or unit_str == 'cubic inches':
             unit_str = 'i'
-        elif unit_str == 'cubic_feet' or unit_str == 'cubic-feet':
+        elif unit_str == 'cubic_feet' or unit_str == 'cubic-feet' or unit_str == 'cubic feet':
             unit_str = 'f'
         return unit_str
