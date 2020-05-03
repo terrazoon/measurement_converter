@@ -45,7 +45,8 @@ test_list = [
     [1, 1, 'cubic-inches', 'cubic-inches', ValidationConstants.CORRECT],
     [73.12, 19.4, 'gallons', 'kelvin', ValidationConstants.INVALID],
     [7.48052, 1, 'g', 'cubic feet', ValidationConstants.CORRECT],
-    [1, 16, 'g', 'c', ValidationConstants.CORRECT]
+    [1, 16, 'g', 'c', ValidationConstants.CORRECT],
+    [1, 16, 'g', 'cubic ziph rats', ValidationConstants.INVALID]
 ]
 
 

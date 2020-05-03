@@ -1,8 +1,11 @@
+import logging
 from src.services.validation_constants import ValidationConstants
 from src.services.validation_service import ValidationService
 from src.services.volume_factory import VolumeFactory
 
 factory = VolumeFactory()
+
+logger = logging.getLogger()
 
 
 class VolumeService:
@@ -20,6 +23,7 @@ class VolumeService:
         :param to_unit: the new unit of measurement
         :return: "invalid", "correct", or "incorrect"
         """
+
         from_unit = VolumeService._adjust_units(from_unit)
         to_unit = VolumeService._adjust_units(to_unit)
         is_valid = ValidationService.validate_volume(my_input, from_unit, to_unit)
@@ -56,8 +60,11 @@ class VolumeService:
         :return: the abbreviation
         """
         unit_str = unit_str.lower()
-        if unit_str == 'cubic_inches' or unit_str == 'cubic-inches' or unit_str == 'cubic inches':
-            unit_str = 'i'
-        elif unit_str == 'cubic_feet' or unit_str == 'cubic-feet' or unit_str == 'cubic feet':
-            unit_str = 'f'
-        return unit_str
+        if "cubic" in unit_str and "feet" in unit_str:
+            unit_str = "f"
+        elif "cubic" in unit_str and "inches" in unit_str:
+            unit_str = "i"
+        elif "cubic" in unit_str:
+            logger.error(f"invalid measurement: {unit_str}")
+            unit_str = "z"
+        return unit_str[0]
