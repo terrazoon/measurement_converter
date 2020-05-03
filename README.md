@@ -16,8 +16,8 @@ This is a simple UI to support this project.  Code for it can be found at [GitHu
 
 ### Via the browser URL bar
 
-https://www.kennethkehl.com/api/temperature/{input}/{student response}/{from_units}/{to_units}
-https://www.kennethkehl.com/api/volume/{input}/{student response}/{from_units}/{to_units}
+https://www.kennethkehl.com/api/temperature/{input}/{student_response}/{from_units}/{to_units}
+https://www.kennethkehl.com/api/volume/{input}/{student_response}/{from_units}/{to_units}
 
 Note that if you get tired of typing Fahrenheit or Cubic-feet every time, there is a shorthand you can use. This
 shorthand is the first letter of the unit of measurement (Fahrenheit == 'f', etc.) except in the case of cubic-feet ("f")
@@ -47,7 +47,7 @@ sls offline start
 
 Get the URLs to use from the command prompt (should be localhost:3000 etc.)
 
-7. Call the urls from a browser, or, from a command prompt, invoke the various curl commands (see below).
+Call the urls from a browser, or, from a command prompt, invoke the various curl commands (see below).
 
 
 ## Code Reviews
