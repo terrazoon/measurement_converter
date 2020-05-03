@@ -1,3 +1,5 @@
+import json
+
 from src.services.volume_service import VolumeService
 from src.utils.global_exception_handler import global_exception
 
@@ -14,5 +16,9 @@ def convert(event, context):
     to_unit = to_unit[0]
     answer = VolumeService.get_converted_volume(my_input, output, from_unit, to_unit)
     answer = answer.replace("\"", "")
-    response = {'statusCode': 200, 'isBase64Encoded': False, 'headers': {}, 'body': answer}
+    response = {'statusCode': 200,
+                'isBase64Encoded': False,
+                'headers': {"Access-Control-Allow-Origin": "*"},
+                'body': json.dumps(answer)
+                }
     return response
