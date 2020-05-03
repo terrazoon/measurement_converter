@@ -8,7 +8,13 @@ This is a demo project that converts temperatures and volumes in various ways.  
 
 ## How to run the app
 
-### The project is currently running in AWS and you can run the demo version in a browser:
+### Via the Demo UI
+
+http://teacher-converter-tool.s3-website-us-east-1.amazonaws.com
+
+This is a simple UI to support this project.  Code for it can be found at [GitHub] (https://github.com/terrazoon/measurement_converter_ui)
+
+### Via the browser URL bar
 
 https://www.kennethkehl.com/api/temperature/{input}/{student response}/{from_units}/{to_units}
 https://www.kennethkehl.com/api/volume/{input}/{student response}/{from_units}/{to_units}
@@ -85,7 +91,7 @@ curl -v localhost:3000/273.15/0/k/c
 This is because a deploy step would require storing AWS access keys in Github and Github specifically recommends not doing so while
 Github Actions is in public beta. 
 2. Add CloudWatch alarms to notify if API calls are failing
-3. Add S3-hosted static website so users can use a UI
+3. Improve the UI by using CloudFront and a custom domain.
 4. Add a dead letter SQS queue to catch any failed requests
 5. Register emails to notify users of api changes
 

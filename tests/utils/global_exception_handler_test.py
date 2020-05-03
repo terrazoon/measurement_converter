@@ -1,7 +1,6 @@
 import unittest
 
 from src.controllers import temperature_controller, volume_controller
-from src.services.temperature_service import TemperatureService
 
 
 class GlobalExceptionHandlerTest(unittest.TestCase):
